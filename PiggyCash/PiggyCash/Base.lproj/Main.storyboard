@@ -7,11 +7,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="OpenSans-Semibold.ttf">
-            <string>OpenSans-Semibold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="rOV-E3-yVA">
@@ -29,8 +24,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PiggyCash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKQ-I1-F96">
-                                        <rect key="frame" x="25" y="28" width="83" height="24"/>
-                                        <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="17"/>
+                                        <rect key="frame" x="25" y="28" width="83.5" height="24"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <color key="textColor" red="0.91441661119999995" green="0.9492997527" blue="0.96926313639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -89,22 +84,112 @@
                         <rect key="frame" x="0.0" y="0.0" width="700" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello this is Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tb-IV-wny">
-                                <rect key="frame" x="82" y="108" width="177" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CtO-eS-k5x">
+                                <rect key="frame" x="0.0" y="0.0" width="700" height="768"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFY-48-C1w">
+                                        <rect key="frame" x="0.0" y="0.0" width="700" height="10"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="10" id="BDg-R8-gqZ"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-0t-oMT">
+                                        <rect key="frame" x="20" y="20" width="660" height="250"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KuW-Oh-fgS">
+                                                <rect key="frame" x="0.0" y="0.0" width="660" height="80"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyR-dd-F1O" customClass="PCWidgetView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="206.5" height="80"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Hello"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOS-Nu-DgR" customClass="PCWidgetView">
+                                                        <rect key="frame" x="226.5" y="0.0" width="207" height="80"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="THis"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeD-Bg-MvH" customClass="PCWidgetView">
+                                                        <rect key="frame" x="453.5" y="0.0" width="206.5" height="80"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="is"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-MA-AGS">
+                                                <rect key="frame" x="0.0" y="100" width="660" height="150"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIZ-qw-ubc" customClass="PCWidgetView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="433.5" height="150"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="kpiMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="TEST"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYK-uo-K5c" customClass="PCWidgetView">
+                                                        <rect key="frame" x="453.5" y="0.0" width="206.5" height="150"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="kpiMode" value="NO"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="kYK-uo-K5c" firstAttribute="width" secondItem="UeD-Bg-MvH" secondAttribute="width" id="iKQ-hZ-Zo2"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dFY-48-C1w" firstAttribute="top" secondItem="CtO-eS-k5x" secondAttribute="top" id="8sy-iO-MPP"/>
+                                    <constraint firstItem="uXF-0t-oMT" firstAttribute="leading" secondItem="CtO-eS-k5x" secondAttribute="leading" constant="20" id="R30-vS-9Fh"/>
+                                    <constraint firstItem="uXF-0t-oMT" firstAttribute="top" secondItem="CtO-eS-k5x" secondAttribute="top" constant="20" id="W0w-4h-peh"/>
+                                    <constraint firstItem="dFY-48-C1w" firstAttribute="leading" secondItem="CtO-eS-k5x" secondAttribute="leading" id="ghd-a7-LxG"/>
+                                    <constraint firstAttribute="bottom" secondItem="uXF-0t-oMT" secondAttribute="bottom" constant="20" id="jyj-CD-nem"/>
+                                    <constraint firstAttribute="trailing" secondItem="dFY-48-C1w" secondAttribute="trailing" id="p8O-K1-VXR"/>
+                                    <constraint firstItem="dFY-48-C1w" firstAttribute="width" secondItem="CtO-eS-k5x" secondAttribute="width" id="rry-r1-Zcb"/>
+                                    <constraint firstAttribute="trailing" secondItem="uXF-0t-oMT" secondAttribute="trailing" constant="20" id="yyh-Af-Xrw"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.91441661119999995" green="0.9492997527" blue="0.96926313639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="CtO-eS-k5x" secondAttribute="bottom" id="0eq-SR-mRU"/>
+                            <constraint firstAttribute="trailing" secondItem="CtO-eS-k5x" secondAttribute="trailing" id="Dka-oM-XBU"/>
+                            <constraint firstItem="CtO-eS-k5x" firstAttribute="top" secondItem="gYm-RE-RxF" secondAttribute="top" id="KbH-cl-z2T"/>
+                            <constraint firstItem="CtO-eS-k5x" firstAttribute="leading" secondItem="gYm-RE-RxF" secondAttribute="leading" id="RmD-rA-wDm"/>
+                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="700" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dg-Im-HQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="160" y="-171"/>
+            <point key="canvasLocation" x="159.9609375" y="-171.09375"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="fgs-cS-JCp">
@@ -126,6 +211,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="HfL-ah-vyp"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <state key="normal" title="Dashboard"/>
                                         <connections>
                                             <action selector="actionMenuItemDashboardTouchUpInside:" destination="cfq-SW-hXe" eventType="touchUpInside" id="p9B-8x-ogX"/>
@@ -133,6 +219,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEW-UH-1aV">
                                         <rect key="frame" x="0.0" y="80" width="100" height="80"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <state key="normal" title="Participants"/>
                                         <connections>
                                             <action selector="actionMenuItemParticipantsTouchUpInside:" destination="cfq-SW-hXe" eventType="touchUpInside" id="ceZ-OL-ZxF"/>
