@@ -7,8 +7,11 @@
 //
 
 #import "PCMainSplitVC.h"
+#import "PCMenuVC.h"
 
-@interface PCMainSplitVC ()
+@interface PCMainSplitVC ()<PCMenuVCDelegate>
+
+@property (strong, nonatomic) PCMenuVC *menuVC;
 
 @end
 
@@ -18,8 +21,12 @@
 {
     [super viewDidLoad];
     
+    _menuVC = self.viewControllers[0];
+    _menuVC.delegate = self;
+    
     [self setMasterCollapsed:YES
                     animated:NO];
+    [self selectMenuItemAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,6 +62,36 @@
     } else {
         animationBlock();
     }
+}
+
+- (void)selectMenuItemAtIndex:(NSUInteger)index
+{
+    static NSArray *menuItems = nil;
+    if (!menuItems) {
+        menuItems = @[
+                      @{
+                          @"storyboard": @"Main",
+                          @"identifier": @"PCDashboardVC"
+                          },
+                      @{
+                          @"storyboard": @"Main",
+                          @"identifier": @"PCParticipantsVC"
+                          }
+                      ];
+    }
+    
+    NSDictionary *menuItem = menuItems[index];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:menuItem[@"storyboard"]
+                                                         bundle:nil];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:menuItem[@"identifier"]];
+    self.viewControllers = @[self.viewControllers[0], viewController];
+}
+
+#pragma mark - PCMenuVCDelegate
+
+- (void)menuVCDidSelectMenuItemAtIndex:(NSUInteger)index
+{
+    [self selectMenuItemAtIndex:index];
 }
 
 @end

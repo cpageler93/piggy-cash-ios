@@ -24,4 +24,16 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - actions
+
+- (IBAction)actionMenuItemDashboardTouchUpInside:(UIButton *)sender
+{
+    [_delegate menuVCDidSelectMenuItemAtIndex:0];
+}
+
+- (IBAction)actionMenuItemParticipantsTouchUpInside:(UIButton *)sender
+{
+    [_delegate menuVCDidSelectMenuItemAtIndex:1];;
+}
+
 @end

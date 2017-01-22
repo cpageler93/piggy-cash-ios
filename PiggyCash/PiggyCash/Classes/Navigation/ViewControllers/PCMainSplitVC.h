@@ -14,4 +14,6 @@
 - (void)setMasterCollapsed:(BOOL)masterCollapsed
                   animated:(BOOL)animated;
 
+- (void)selectMenuItemAtIndex:(NSUInteger)index;
+
 @end

@@ -25,6 +25,8 @@
 		593F359A1E33D23200751B19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593F35991E33D23200751B19 /* Assets.xcassets */; };
 		593F359D1E33D24F00751B19 /* PCMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 593F359C1E33D24F00751B19 /* PCMainVC.m */; };
 		593F35A01E33D3C800751B19 /* PCMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 593F359F1E33D3C800751B19 /* PCMenuVC.m */; };
+		598CCF7E1E34C2B300887B20 /* PCDashboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 598CCF7D1E34C2B300887B20 /* PCDashboardVC.m */; };
+		598CCF841E34C3D200887B20 /* PCParticipantsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 598CCF831E34C3D200887B20 /* PCParticipantsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,10 @@
 		593F359C1E33D24F00751B19 /* PCMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCMainVC.m; path = Classes/Navigation/ViewControllers/PCMainVC.m; sourceTree = "<group>"; };
 		593F359E1E33D3C800751B19 /* PCMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCMenuVC.h; path = Classes/Navigation/ViewControllers/PCMenuVC.h; sourceTree = "<group>"; };
 		593F359F1E33D3C800751B19 /* PCMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCMenuVC.m; path = Classes/Navigation/ViewControllers/PCMenuVC.m; sourceTree = "<group>"; };
+		598CCF7C1E34C2B300887B20 /* PCDashboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCDashboardVC.h; path = Classes/Dashboard/ViewControllers/PCDashboardVC.h; sourceTree = "<group>"; };
+		598CCF7D1E34C2B300887B20 /* PCDashboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCDashboardVC.m; path = Classes/Dashboard/ViewControllers/PCDashboardVC.m; sourceTree = "<group>"; };
+		598CCF821E34C3D200887B20 /* PCParticipantsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCParticipantsVC.h; path = Classes/Participants/ViewControllers/PCParticipantsVC.h; sourceTree = "<group>"; };
+		598CCF831E34C3D200887B20 /* PCParticipantsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCParticipantsVC.m; path = Classes/Participants/ViewControllers/PCParticipantsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,8 @@
 			children = (
 				593F35931E33D1FC00751B19 /* Core */,
 				593F35911E33D1BA00751B19 /* Navigation */,
+				598CCF7B1E34C29B00887B20 /* Dashboard */,
+				598CCF7F1E34C3AE00887B20 /* Participants */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -175,12 +183,46 @@
 		593F35981E33D21800751B19 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				598CCF821E34C3D200887B20 /* PCParticipantsVC.h */,
 				593F35621E2BA59500751B19 /* AppDelegate.h */,
 				593F35951E33D21100751B19 /* PCMainSplitVC.h */,
 				593F359B1E33D24F00751B19 /* PCMainVC.h */,
 				593F359E1E33D3C800751B19 /* PCMenuVC.h */,
+				598CCF7C1E34C2B300887B20 /* PCDashboardVC.h */,
 			);
 			name = Headers;
+			sourceTree = "<group>";
+		};
+		598CCF7B1E34C29B00887B20 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				598CCF811E34C3BC00887B20 /* ViewControllers */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		598CCF7F1E34C3AE00887B20 /* Participants */ = {
+			isa = PBXGroup;
+			children = (
+				598CCF801E34C3B600887B20 /* ViewControllers */,
+			);
+			name = Participants;
+			sourceTree = "<group>";
+		};
+		598CCF801E34C3B600887B20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				598CCF831E34C3D200887B20 /* PCParticipantsVC.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		598CCF811E34C3BC00887B20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				598CCF7D1E34C2B300887B20 /* PCDashboardVC.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +310,8 @@
 			files = (
 				593F35641E2BA59500751B19 /* AppDelegate.m in Sources */,
 				593F359D1E33D24F00751B19 /* PCMainVC.m in Sources */,
+				598CCF841E34C3D200887B20 /* PCParticipantsVC.m in Sources */,
+				598CCF7E1E34C2B300887B20 /* PCDashboardVC.m in Sources */,
 				593F35A01E33D3C800751B19 /* PCMenuVC.m in Sources */,
 				593F35971E33D21100751B19 /* PCMainSplitVC.m in Sources */,
 				593F35611E2BA59500751B19 /* main.m in Sources */,
@@ -431,6 +475,7 @@
 				593F35751E2BA59500751B19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

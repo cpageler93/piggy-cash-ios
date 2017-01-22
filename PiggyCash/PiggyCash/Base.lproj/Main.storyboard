@@ -4,9 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -73,30 +71,40 @@
                 <splitViewController id="MGZ-IS-VcP" customClass="PCMainSplitVC" sceneMemberID="viewController">
                     <connections>
                         <segue destination="cfq-SW-hXe" kind="relationship" relationship="masterViewController" id="Lah-UJ-PPh"/>
-                        <segue destination="wMt-bU-DYy" kind="relationship" relationship="detailViewController" id="uwu-2q-A3J"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKY-i2-HR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-409" y="-202"/>
         </scene>
-        <!--View Controller-->
+        <!--DashboardVC-->
         <scene sceneID="KHs-9f-bTU">
             <objects>
-                <viewController id="wMt-bU-DYy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PCDashboardVC" id="wMt-bU-DYy" customClass="PCDashboardVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uYc-3i-jwh"/>
                         <viewControllerLayoutGuide type="bottom" id="s8M-LN-p5K"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gYm-RE-RxF">
-                        <rect key="frame" x="0.0" y="0.0" width="703" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello this is Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Tb-IV-wny">
+                                <rect key="frame" x="82" y="108" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.91441661119999995" green="0.9492997527" blue="0.96926313639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="700" height="768"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dg-Im-HQ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="-202"/>
+            <point key="canvasLocation" x="160" y="-171"/>
         </scene>
         <!--MenuVC-->
         <scene sceneID="fgs-cS-JCp">
@@ -114,18 +122,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="100" height="768"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07E-zg-Hhp">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="07E-zg-Hhp" secondAttribute="height" id="t97-xX-Bi5"/>
+                                            <constraint firstAttribute="height" constant="80" id="HfL-ah-vyp"/>
                                         </constraints>
                                         <state key="normal" title="Dashboard"/>
+                                        <connections>
+                                            <action selector="actionMenuItemDashboardTouchUpInside:" destination="cfq-SW-hXe" eventType="touchUpInside" id="p9B-8x-ogX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEW-UH-1aV">
-                                        <rect key="frame" x="0.0" y="100" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="80" width="100" height="80"/>
                                         <state key="normal" title="Participants"/>
+                                        <connections>
+                                            <action selector="actionMenuItemParticipantsTouchUpInside:" destination="cfq-SW-hXe" eventType="touchUpInside" id="ceZ-OL-ZxF"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIb-uC-tfQ">
-                                        <rect key="frame" x="0.0" y="200" width="100" height="568"/>
+                                        <rect key="frame" x="0.0" y="160" width="100" height="608"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -147,6 +161,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afq-jM-efT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="255" y="-862"/>
+        </scene>
+        <!--ParticipantsVC-->
+        <scene sceneID="Fxh-9M-41V">
+            <objects>
+                <viewController storyboardIdentifier="PCParticipantsVC" id="GWg-Vc-KBU" customClass="PCParticipantsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uWb-7u-cYX"/>
+                        <viewControllerLayoutGuide type="bottom" id="VIi-39-xvJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j6Z-Vd-qP7">
+                        <rect key="frame" x="0.0" y="0.0" width="700" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello this is Participants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWv-kn-ivi">
+                                <rect key="frame" x="82" y="108" width="184" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91441661119999995" green="0.9492997527" blue="0.96926313639999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="700" height="768"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6i-t3-aqh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="160" y="483"/>
         </scene>
     </scenes>
 </document>

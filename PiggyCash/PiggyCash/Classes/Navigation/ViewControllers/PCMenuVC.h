@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PCMenuVCDelegate <NSObject>
+@required
+
+- (void)menuVCDidSelectMenuItemAtIndex:(NSUInteger)index;
+
+@end
+
 @interface PCMenuVC : UIViewController
+
+@property (weak, nonatomic) id<PCMenuVCDelegate> delegate;
 
 @end
