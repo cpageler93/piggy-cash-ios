@@ -95,7 +95,7 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uXF-0t-oMT">
-                                        <rect key="frame" x="20" y="20" width="660" height="250"/>
+                                        <rect key="frame" x="20" y="20" width="660" height="620"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KuW-Oh-fgS">
                                                 <rect key="frame" x="0.0" y="0.0" width="660" height="80"/>
@@ -107,7 +107,12 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Hello"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Tags"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="iconBackgroundColor">
+                                                                <color key="value" red="0.16303554179999999" green="0.19589746" blue="0.2728279233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="iconHome"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="kpiValue" value="315"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOS-Nu-DgR" customClass="PCWidgetView">
@@ -133,27 +138,55 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-MA-AGS">
-                                                <rect key="frame" x="0.0" y="100" width="660" height="150"/>
+                                                <rect key="frame" x="0.0" y="100" width="660" height="250"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIZ-qw-ubc" customClass="PCWidgetView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="433.5" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="433.5" height="250"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="kpiMode" value="NO"/>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="TEST"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Test"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYK-uo-K5c" customClass="PCWidgetView">
-                                                        <rect key="frame" x="453.5" y="0.0" width="206.5" height="150"/>
+                                                        <rect key="frame" x="453.5" y="0.0" width="206.5" height="250"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                 <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="kpiMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="foo"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yfA-MM-Nmy">
+                                                <rect key="frame" x="0.0" y="370" width="660" height="250"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTe-d7-aPZ" customClass="PCWidgetView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="433.5" height="250"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="kpiMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="Test"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6g-eS-wSm" customClass="PCWidgetView">
+                                                        <rect key="frame" x="453.5" y="0.0" width="206.5" height="250"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.75284439329999997" green="0.78191059829999998" blue="0.79925745729999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="kpiMode" value="NO"/>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="title" value="foo"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
@@ -161,6 +194,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="kYK-uo-K5c" firstAttribute="width" secondItem="UeD-Bg-MvH" secondAttribute="width" id="iKQ-hZ-Zo2"/>
+                                            <constraint firstItem="o6g-eS-wSm" firstAttribute="width" secondItem="kYK-uo-K5c" secondAttribute="width" id="ldx-Z2-Los"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -279,4 +313,7 @@
             <point key="canvasLocation" x="160" y="483"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iconHome" width="27" height="26"/>
+    </resources>
 </document>

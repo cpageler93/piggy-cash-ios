@@ -15,8 +15,10 @@ IB_DESIGNABLE
 @property (strong, nonatomic) IBInspectable UIColor *iconBackgroundColor;
 @property (strong, nonatomic) IBInspectable UIImage *iconImage;
 
-@property (nonatomic) IBInspectable BOOL kpiMode;
-
 @property (strong, nonatomic) IBInspectable NSString *title;
+@property (strong, nonatomic) IBInspectable UIColor *titleColor;
+
+@property (nonatomic) IBInspectable BOOL kpiMode;
+@property (strong, nonatomic) IBInspectable NSString *kpiValue;
 
 @end

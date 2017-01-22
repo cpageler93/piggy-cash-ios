@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSLayoutConstraint *lcImageViewIconHeight;
 
 @property (strong, nonatomic) UILabel *labelTitle;
+@property (strong, nonatomic) UILabel *labelKPIValue;
 
 @end
 
@@ -54,10 +55,12 @@
     _iconImage = nil;
     _iconBackgroundColor = [UIColor grayColor];
     _kpiMode = YES;
+    _titleColor = [UIColor grayColor];
     
     [self initViewTopBar];
     [self initImageViewIcon];
     [self initLabelTitle];
+    [self initLabelKPIValue];
     
     [self updateAppearance];
 }
@@ -145,8 +148,20 @@
 
 - (void)initLabelTitle
 {
+    if (_labelTitle) {
+        [_labelTitle removeFromSuperview];
+    }
+    
     _labelTitle = [UILabel new];
     _labelTitle.translatesAutoresizingMaskIntoConstraints = NO;
+    if (_kpiMode) {
+        _labelTitle.font = [UIFont fontWithName:@"Avenir-Black"
+                                           size:14];
+    } else {
+        _labelTitle.font = [UIFont fontWithName:@"Avenir-Medium"
+                                           size:20];
+    }
+    
     [_viewTopBar addSubview:_labelTitle];
     [self addConstraints:@[
                            [NSLayoutConstraint constraintWithItem:_labelTitle
@@ -162,7 +177,7 @@
                                                            toItem:_viewTopBar
                                                         attribute:NSLayoutAttributeCenterY
                                                        multiplier:1
-                                                         constant:0],
+                                                         constant:_kpiMode ? -14 : 0],
                            [NSLayoutConstraint constraintWithItem:_labelTitle
                                                         attribute:NSLayoutAttributeRight
                                                         relatedBy:NSLayoutRelationEqual
@@ -171,6 +186,43 @@
                                                        multiplier:1
                                                          constant:0]
                            ]];
+}
+
+- (void)initLabelKPIValue
+{
+    if (_labelKPIValue) {
+        [_labelKPIValue removeFromSuperview];
+    }
+    
+    if (_kpiMode) {
+        _labelKPIValue = [UILabel new];
+        _labelKPIValue.translatesAutoresizingMaskIntoConstraints = NO;
+        _labelKPIValue.font = [UIFont fontWithName:@"Avenir-Black" size:20];
+        [self addSubview:_labelKPIValue];
+        [self addConstraints:@[
+                               [NSLayoutConstraint constraintWithItem:_labelKPIValue
+                                                            attribute:NSLayoutAttributeLeft
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:_labelTitle
+                                                            attribute:NSLayoutAttributeLeft
+                                                           multiplier:1
+                                                             constant:0],
+                               [NSLayoutConstraint constraintWithItem:_labelKPIValue
+                                                            attribute:NSLayoutAttributeTop
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:_labelTitle
+                                                            attribute:NSLayoutAttributeBottom
+                                                           multiplier:1
+                                                             constant:2],
+                               [NSLayoutConstraint constraintWithItem:_labelKPIValue
+                                                            attribute:NSLayoutAttributeRight
+                                                            relatedBy:NSLayoutRelationEqual
+                                                               toItem:_labelTitle
+                                                            attribute:NSLayoutAttributeRight
+                                                           multiplier:1
+                                                             constant:0]
+                               ]];
+    }
 }
 
 #pragma mark - setter
@@ -196,6 +248,7 @@
 - (void)setKpiMode:(BOOL)kpiMode
 {
     _kpiMode = kpiMode;
+    [self initLabelTitle];
     [self invalidateIntrinsicContentSize];
     [self updateAppearance];
 }
@@ -203,6 +256,18 @@
 - (void)setTitle:(NSString *)title
 {
     _title = title;
+    [self updateAppearance];
+}
+
+- (void)setTitleColor:(UIColor *)titleColor
+{
+    _titleColor = titleColor;
+    [self updateAppearance];
+}
+
+- (void)setKpiValue:(NSString *)kpiValue
+{
+    _kpiValue = kpiValue;
     [self updateAppearance];
 }
 
@@ -221,10 +286,17 @@
     [self layoutIfNeeded];
     
     _imageViewIcon.backgroundColor = _iconBackgroundColor;
+    _imageViewIcon.image = _iconImage;
+    _imageViewIcon.contentMode = UIViewContentModeCenter;
     _imageViewIcon.layer.cornerRadius = _lcImageViewIconHeight.constant / 2;
     _imageViewIcon.layer.masksToBounds = YES;
     
-    _labelTitle.text = _title;
+    _labelTitle.text = _kpiMode ? [_title uppercaseString] : _title;
+    _labelTitle.textColor = _titleColor;
+    
+    _labelKPIValue.alpha = _kpiMode ? 1 : 0;
+    _labelKPIValue.textColor = _iconBackgroundColor;
+    _labelKPIValue.text = _kpiValue;
 }
 
 #pragma mark - layout
@@ -235,7 +307,7 @@
     if (_kpiMode) {
         s.height = 80;
     } else {
-        s.height = 150;
+        s.height = 250;
     }
     return s;
 }
