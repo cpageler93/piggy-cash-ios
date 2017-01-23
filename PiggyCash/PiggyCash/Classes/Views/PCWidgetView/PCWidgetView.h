@@ -21,4 +21,6 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable BOOL kpiMode;
 @property (strong, nonatomic) IBInspectable NSString *kpiValue;
 
+@property (strong, nonatomic) IBOutlet UIView *contentView;
+
 @end

@@ -18,6 +18,7 @@
 		598CCF7E1E34C2B300887B20 /* PCDashboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 598CCF7D1E34C2B300887B20 /* PCDashboardVC.m */; };
 		598CCF841E34C3D200887B20 /* PCParticipantsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 598CCF831E34C3D200887B20 /* PCParticipantsVC.m */; };
 		598CCF891E34E7E800887B20 /* PCWidgetView.m in Sources */ = {isa = PBXBuildFile; fileRef = 598CCF881E34E7E800887B20 /* PCWidgetView.m */; };
+		598CCF8E1E3691A000887B20 /* PCQueriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 598CCF8D1E3691A000887B20 /* PCQueriesVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		598CCF831E34C3D200887B20 /* PCParticipantsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCParticipantsVC.m; path = Classes/Participants/ViewControllers/PCParticipantsVC.m; sourceTree = "<group>"; };
 		598CCF871E34E7E800887B20 /* PCWidgetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCWidgetView.h; path = Classes/Views/PCWidgetView/PCWidgetView.h; sourceTree = "<group>"; };
 		598CCF881E34E7E800887B20 /* PCWidgetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCWidgetView.m; path = Classes/Views/PCWidgetView/PCWidgetView.m; sourceTree = "<group>"; };
+		598CCF8C1E3691A000887B20 /* PCQueriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCQueriesVC.h; path = Classes/Queries/ViewControllers/PCQueriesVC.h; sourceTree = "<group>"; };
+		598CCF8D1E3691A000887B20 /* PCQueriesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCQueriesVC.m; path = Classes/Queries/ViewControllers/PCQueriesVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 				593F35911E33D1BA00751B19 /* Navigation */,
 				598CCF7B1E34C29B00887B20 /* Dashboard */,
 				598CCF7F1E34C3AE00887B20 /* Participants */,
+				598CCF8A1E36917900887B20 /* Queries */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -149,6 +153,7 @@
 		593F35981E33D21800751B19 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
+				598CCF8C1E3691A000887B20 /* PCQueriesVC.h */,
 				598CCF821E34C3D200887B20 /* PCParticipantsVC.h */,
 				593F35621E2BA59500751B19 /* AppDelegate.h */,
 				593F35951E33D21100751B19 /* PCMainSplitVC.h */,
@@ -206,6 +211,22 @@
 				598CCF881E34E7E800887B20 /* PCWidgetView.m */,
 			);
 			name = PCWidgetView;
+			sourceTree = "<group>";
+		};
+		598CCF8A1E36917900887B20 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				598CCF8B1E36918700887B20 /* ViewControllers */,
+			);
+			name = Queries;
+			sourceTree = "<group>";
+		};
+		598CCF8B1E36918700887B20 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				598CCF8D1E3691A000887B20 /* PCQueriesVC.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +308,7 @@
 				598CCF891E34E7E800887B20 /* PCWidgetView.m in Sources */,
 				598CCF7E1E34C2B300887B20 /* PCDashboardVC.m in Sources */,
 				593F35A01E33D3C800751B19 /* PCMenuVC.m in Sources */,
+				598CCF8E1E3691A000887B20 /* PCQueriesVC.m in Sources */,
 				593F35971E33D21100751B19 /* PCMainSplitVC.m in Sources */,
 				593F35611E2BA59500751B19 /* main.m in Sources */,
 			);

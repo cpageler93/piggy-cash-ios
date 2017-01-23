@@ -76,6 +76,10 @@
                       @{
                           @"storyboard": @"Main",
                           @"identifier": @"PCParticipantsVC"
+                          },
+                      @{
+                          @"storyboard": @"Main",
+                          @"identifier": @"PCQueriesVC"
                           }
                       ];
     }

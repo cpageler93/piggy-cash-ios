@@ -33,7 +33,12 @@
 
 - (IBAction)actionMenuItemParticipantsTouchUpInside:(UIButton *)sender
 {
-    [_delegate menuVCDidSelectMenuItemAtIndex:1];;
+    [_delegate menuVCDidSelectMenuItemAtIndex:1];
+}
+
+- (IBAction)actionMenuItemQueriesTouchUpInside:(UIButton *)sender
+{
+    [_delegate menuVCDidSelectMenuItemAtIndex:2];
 }
 
 @end

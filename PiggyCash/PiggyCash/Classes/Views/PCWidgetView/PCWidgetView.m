@@ -63,6 +63,7 @@
     [self initLabelKPIValue];
     
     [self updateAppearance];
+    [self updateContentView];
 }
 
 - (void)initViewTopBar
@@ -271,6 +272,12 @@
     [self updateAppearance];
 }
 
+- (void)setContentView:(UIView *)contentView
+{
+    _contentView = contentView;
+    [self updateContentView];
+}
+
 #pragma mark - update
 
 - (void)updateAppearance
@@ -299,15 +306,67 @@
     _labelKPIValue.text = _kpiValue;
 }
 
+- (void)updateContentView
+{
+    if (!_contentView) { return; }
+    if (_contentView.superview != self) {
+        [_contentView removeFromSuperview];
+        [self addSubview:_contentView];
+    }
+    _contentView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addConstraints:@[
+                           [NSLayoutConstraint constraintWithItem:_contentView
+                                                        attribute:NSLayoutAttributeLeft
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:self
+                                                        attribute:NSLayoutAttributeLeft
+                                                       multiplier:1
+                                                         constant:0],
+                           [NSLayoutConstraint constraintWithItem:_contentView
+                                                        attribute:NSLayoutAttributeTop
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:_viewTopBar
+                                                        attribute:NSLayoutAttributeBottom
+                                                       multiplier:1
+                                                         constant:0],
+                           [NSLayoutConstraint constraintWithItem:_contentView
+                                                        attribute:NSLayoutAttributeRight
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:self
+                                                        attribute:NSLayoutAttributeRight
+                                                       multiplier:1
+                                                         constant:0],
+                           [NSLayoutConstraint constraintWithItem:_contentView
+                                                        attribute:NSLayoutAttributeBottom
+                                                        relatedBy:NSLayoutRelationEqual
+                                                           toItem:self
+                                                        attribute:NSLayoutAttributeBottom
+                                                       multiplier:1
+                                                         constant:0]
+                           ]];
+    
+    [self invalidateIntrinsicContentSize];
+}
+
 #pragma mark - layout
 
 - (CGSize)intrinsicContentSize
 {
     CGSize s = [super intrinsicContentSize];
+    
     if (_kpiMode) {
         s.height = 80;
     } else {
-        s.height = 250;
+        CGFloat contentViewHeight = 200;
+        if (_contentView) {
+            CGSize contenteViewIntrinsticSize = [_contentView sizeThatFits:CGSizeMake(s.width, CGFLOAT_MAX)];
+            if ([_contentView isKindOfClass:[UITableView class]]) {
+                UITableView *tableViewContentView = (UITableView *)_contentView;
+                contentViewHeight = tableViewContentView.contentSize.height;
+            }
+            contentViewHeight = contenteViewIntrinsticSize.height;
+        }
+        s.height = _lcViewTopBarHeight.constant + contentViewHeight;
     }
     return s;
 }
